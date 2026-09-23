@@ -1,0 +1,79 @@
+generated: '2026-09-22'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 5
+  own: 5
+  other_domain: 0
+  platform: 0
+  roles:
+  - api
+  - docs
+  - other
+  - support
+  - website
+hosts:
+- host: api.nielsen.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: nielsen.com
+  role: api
+  relation: own
+- host: help.nielsen.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - Support
+  serves:
+  - docs
+  registrable_domain: nielsen.com
+  role: support
+  relation: own
+- host: nielsen.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  serves: []
+  registrable_domain: nielsen.com
+  role: website
+  relation: own
+- host: trust.nielsen.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - TrustCenter
+  serves: []
+  platform: app.safebase.io
+  registrable_domain: nielsen.com
+  role: other
+  relation: own
+- host: www.nielsen.com
+  found_by:
+  - pointer
+  types:
+  - TermsOfService
+  - PrivacyPolicy
+  - Newsroom
+  - Leadership
+  - Documentation
+  - GettingStarted
+  serves: []
+  registrable_domain: nielsen.com
+  role: docs
+  relation: own
