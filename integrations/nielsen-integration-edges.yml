@@ -5,6 +5,31 @@ checked:
 - https://www.twilio.com/docs/segment/connections/destinations/catalog/nielsen-dcr
 marketplace_apps: []
 edges:
+- partner_name: Twilio Segment
+  partner: segment
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://www.twilio.com/docs/segment/connections/destinations/catalog/nielsen-dcr
+  coverage_role:
+  - destination
+  cdp_signals:
+    destination:
+      catalog_entries:
+      - nielsen-dcr
+      status: PUBLIC
+      partner_owned: false
+      connection_modes:
+      - device:mobile
+      - device:web
+      accepted_methods:
+      - Page
+      - Track
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
 - partner_name: IAB Europe TCF Global Vendor List
   partner: null
   partner_match: domain
@@ -40,29 +65,4 @@ edges:
     detected: '2026-10-14'
   detected_by: sweep-adtech.py
   detected: '2026-10-14'
-- partner_name: Twilio Segment
-  partner: segment
-  partner_match: aggregator
-  marketplace: coverage
-  channel: partner-built
-  direction: partner-built
-  type: coverage
-  relationship: connector-coverage
-  evidence: https://www.twilio.com/docs/segment/connections/destinations/catalog/nielsen-dcr
-  coverage_role:
-  - destination
-  cdp_signals:
-    destination:
-      catalog_entries:
-      - nielsen-dcr
-      status: PUBLIC
-      partner_owned: false
-      connection_modes:
-      - device:mobile
-      - device:web
-      accepted_methods:
-      - Page
-      - Track
-  detected_by: sweep-cdp.py
-  first_seen: '2026-10-14'
 source: https://www.twilio.com/docs/segment/connections/destinations/catalog/nielsen-dcr
