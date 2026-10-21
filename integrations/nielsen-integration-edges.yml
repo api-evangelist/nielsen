@@ -3,33 +3,15 @@ method: searched
 checked:
 - https://vendor-list.consensu.org/v3/vendor-list.json
 - https://www.twilio.com/docs/segment/connections/destinations/catalog/nielsen-dcr
+- https://dvb.org/membership/
+- https://www.atsc.org/members/
+- https://www.atsc.org/nextgen-tv/deployments/
+- https://www.hbbtv.org/membership/
+- https://www.hbbtv.org/resource-library/
+- https://www.hbbtv.org/wp-content/uploads/2022/06/List-of-Test-Suite-Licensees-06-2022.pdf
+- https://www.watchnextgentv.com/shop/receivers/
 marketplace_apps: []
 edges:
-- partner_name: Twilio Segment
-  partner: segment
-  partner_match: aggregator
-  marketplace: coverage
-  channel: partner-built
-  direction: partner-built
-  type: coverage
-  relationship: connector-coverage
-  evidence: https://www.twilio.com/docs/segment/connections/destinations/catalog/nielsen-dcr
-  coverage_role:
-  - destination
-  cdp_signals:
-    destination:
-      catalog_entries:
-      - nielsen-dcr
-      status: PUBLIC
-      partner_owned: false
-      connection_modes:
-      - device:mobile
-      - device:web
-      accepted_methods:
-      - Page
-      - Track
-  detected_by: sweep-cdp.py
-  first_seen: '2026-10-14'
 - partner_name: IAB Europe TCF Global Vendor List
   partner: null
   partner_match: domain
@@ -65,4 +47,51 @@ edges:
     detected: '2026-10-14'
   detected_by: sweep-adtech.py
   detected: '2026-10-14'
+- partner_name: Twilio Segment
+  partner: segment
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://www.twilio.com/docs/segment/connections/destinations/catalog/nielsen-dcr
+  coverage_role:
+  - destination
+  cdp_signals:
+    destination:
+      catalog_entries:
+      - nielsen-dcr
+      status: PUBLIC
+      partner_owned: false
+      connection_modes:
+      - device:mobile
+      - device:web
+      accepted_methods:
+      - Page
+      - Track
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
+- partner_name: ATSC (Advanced Television Systems Committee)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.atsc.org/members/
+  category: broadcast television standards body membership
+  contract_reference:
+    register: ATSC members (atsc.org/members/)
+    standard: ATSC 3.0
+    spec_file: null
+    role: atsc-member
+    registered_name: Nielsen
+    matched_domain: nielsen.com
+    matched_by: domain
+    signal_note: 'participation only: standards-body membership (the page does not mark voting / observer class)'
+    detected_by: sweep-broadcast-tv.py
+    detected: '2026-10-20'
+  detected_by: sweep-broadcast-tv.py
+  first_seen: '2026-10-20'
 source: https://www.twilio.com/docs/segment/connections/destinations/catalog/nielsen-dcr
